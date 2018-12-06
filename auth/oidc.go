@@ -7,7 +7,7 @@ import (
 	"net/http"
 
 	oidc "github.com/coreos/go-oidc"
-	"github.com/int128/oauth2cli"
+	"github.com/david972/oauth2cli"
 	"golang.org/x/oauth2"
 )
 

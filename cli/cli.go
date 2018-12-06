@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/int128/kubelogin/auth"
-	"github.com/int128/kubelogin/kubeconfig"
+	"github.com/david972/kubelogin/auth"
+	"github.com/david972/kubelogin/kubeconfig"
 	flags "github.com/jessevdk/go-flags"
 	homedir "github.com/mitchellh/go-homedir"
 )
@@ -31,6 +31,7 @@ func Parse(osArgs []string, version string) (*CLI, error) {
 
 // CLI represents an interface of this command.
 type CLI struct {
+	ConsoleMode			bool   `long:"console" default:true env:CONSOLE_MODE description:"If set, It'll ask credential by prompt"`
 	KubeConfig      string `long:"kubeconfig" default:"~/.kube/config" env:"KUBECONFIG" description:"Path to the kubeconfig file"`
 	ListenPort      int    `long:"listen-port" default:"8000" env:"KUBELOGIN_LISTEN_PORT" description:"Port used by kubelogin to bind its webserver"`
 	SkipTLSVerify   bool   `long:"insecure-skip-tls-verify" env:"KUBELOGIN_INSECURE_SKIP_TLS_VERIFY" description:"If set, the server's certificate will not be checked for validity. This will make your HTTPS connections insecure"`

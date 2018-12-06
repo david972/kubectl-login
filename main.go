@@ -5,11 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/int128/kubelogin/cli"
+	"github.com/david972/kubelogin/cli"
 )
-
-// Set by goreleaser, see https://goreleaser.com/environment/
-var version = "1.x"
 
 func main() {
 	c, err := cli.Parse(os.Args, version)

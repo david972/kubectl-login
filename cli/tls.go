@@ -8,7 +8,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/int128/kubelogin/kubeconfig"
+	"github.com/david972/kubelogin/kubeconfig"
 )
 
 func (c *CLI) tlsConfig(authProvider *kubeconfig.OIDCAuthProvider) *tls.Config {
