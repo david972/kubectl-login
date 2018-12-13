@@ -1,4 +1,4 @@
-# kubelogin [![CircleCI](https://circleci.com/gh/int128/kubelogin.svg?style=shield)](https://circleci.com/gh/int128/kubelogin)
+# kubelogin [![CircleCI](https://circleci.com/gh/david972/kubectl-login.svg?style=shield)](https://circleci.com/gh/david972/kubectl-login)
 
 This is a kubectl plugin for [Kubernetes OpenID Connect (OIDC) authentication](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens).
 It gets a token from the OIDC provider and writes it to the kubeconfig.
@@ -13,16 +13,16 @@ You need to setup the following components:
 - Role for your group or user
 - kubectl authentication
 
-You can install this by brew tap or from the [releases](https://github.com/int128/kubelogin/releases).
+You can install this by brew tap or from the [releases](https://github.com/david972/kubectl-login/releases).
 
 ```sh
-brew tap int128/kubelogin
+brew tap david9 72/kubelogin
 brew install kubelogin
 ```
 
 After initial setup or when the token has been expired, just run:
 
-```
+```shell
 % kubelogin
 2018/08/27 15:03:06 Reading /home/user/.kube/config
 2018/08/27 15:03:06 Using current context: hello.k8s.local
@@ -33,7 +33,7 @@ After initial setup or when the token has been expired, just run:
 
 or
 
-```
+```shell
 % kubectl login
 ```
 
@@ -46,12 +46,11 @@ For more, see the following documents:
 - [Getting Started with Google Identity Platform](docs/google.md)
 - [Team Operation](docs/team_ops.md)
 
-
 ## Configuration
 
 This supports the following options.
 
-```
+```text
   kubelogin [OPTIONS]
 
 Application Options:

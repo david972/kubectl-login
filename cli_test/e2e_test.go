@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/int128/kubelogin/cli"
-	"github.com/int128/kubelogin/cli_test/authserver"
-	"github.com/int128/kubelogin/cli_test/kubeconfig"
+	"github.com/david972/kubectl-login/cli"
+	"github.com/david972/kubectl-login/cli_test/authserver"
+	"github.com/david972/kubectl-login/cli_test/kubeconfig"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -88,7 +88,7 @@ func TestE2E(t *testing.T) {
 		},
 		"InvalidCACertShouldBeSkipped": {
 			kubeconfig.Values{
-				Issuer: "http://localhost:9000",
+				Issuer:                  "http://localhost:9000",
 				IDPCertificateAuthority: "e2e_test.go",
 			},
 			cli.CLI{},

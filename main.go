@@ -5,8 +5,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/david972/kubelogin/cli"
+	"github.com/david972/kubectl-login/cli"
 )
+
+var version = "2.1.0-beta.1"
 
 func main() {
 	c, err := cli.Parse(os.Args, version)
