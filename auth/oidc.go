@@ -39,9 +39,9 @@ func (c *Config) GetTokenSet(ctx context.Context) (*TokenSet, error) {
 	}
 	flow := oauth2cli.AuthCodeFlow{
 		Config: oauth2.Config{
-			Endpoint:     provider.Endpoint(),
 			ClientID:     c.ClientID,
 			ClientSecret: c.ClientSecret,
+			Endpoint:     provider.Endpoint(),
 			Scopes:       append(c.ExtraScopes, oidc.ScopeOpenID),
 		},
 		LocalServerPort: c.LocalServerPort,
@@ -56,6 +56,7 @@ func (c *Config) GetTokenSet(ctx context.Context) (*TokenSet, error) {
 	if !ok {
 		return nil, fmt.Errorf("id_token is missing in the token response: %s", token)
 	}
+	fmt.Printf("oauth2.Config: %v\n", flow.Config)
 	verifier := provider.Verifier(&oidc.Config{ClientID: c.ClientID})
 	verifiedIDToken, err := verifier.Verify(ctx, idToken)
 	if err != nil {

@@ -79,6 +79,7 @@ func (c *CLI) Run(ctx context.Context) error {
 		LocalServerPort: c.ListenPort,
 		SkipOpenBrowser: c.SkipOpenBrowser,
 	}
+	fmt.Printf("authConfig = %v\n", authConfig)
 	token, err := authConfig.GetTokenSet(ctx)
 	if err != nil {
 		return fmt.Errorf("Could not get token from OIDC provider: %s", err)
