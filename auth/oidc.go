@@ -42,7 +42,7 @@ func (c *Config) GetTokenSet(ctx context.Context) (*TokenSet, error) {
 			ClientID:     c.ClientID,
 			ClientSecret: c.ClientSecret,
 			Endpoint:     provider.Endpoint(),
-			Scopes:       append(c.ExtraScopes, oidc.ScopeOpenID),
+			Scopes:       append(c.ExtraScopes, oidc.ScopeOpenID, "groups", "openid", "profile", "email"),
 		},
 		LocalServerPort: c.LocalServerPort,
 		SkipOpenBrowser: c.SkipOpenBrowser,
